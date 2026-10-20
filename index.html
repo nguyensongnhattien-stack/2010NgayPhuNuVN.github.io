@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gửi mẹ, nhân ngày 20/11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Mali:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--board:#1d3a34;--board-2:#16302b;--chalk:#eef0e4;--chalk-dim:#b9c4b6;--rose:#f2a7b4;--frame:#7a4f2e;--line:rgba(238,240,228,.28);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:#2b1d12;color:var(--chalk);font-family:"Mali","Segoe UI",system-ui,sans-serif;line-height:1.9;font-size:18px}
+.frame{max-width:760px;margin:0 auto;padding:14px}
+.board{background:radial-gradient(120% 80% at 50% 0%,var(--board) 0%,var(--board-2) 100%);border:10px solid var(--frame);border-radius:6px;padding:44px 28px 36px;box-shadow:inset 0 0 60px rgba(0,0,0,.35);min-height:80vh}
+h1,h2{font-family:"Charm","Mali",cursive;font-weight:700;margin:0;line-height:1.25}
+h1{font-size:clamp(2.2rem,8vw,3.4rem);text-align:center}
+h2{font-size:clamp(1.9rem,7vw,2.6rem);text-align:center}
+.sub{color:var(--chalk-dim);margin:6px 0 0;text-align:center}
+.heart{width:84px;display:block;margin:0 auto 10px}
+.heart path{fill:none;stroke:var(--rose);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:300;stroke-dashoffset:300;animation:draw 2.4s ease forwards .3s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.rule{border:0;border-top:2px dashed var(--line);margin:26px 0}
+.pg{animation:in .5s ease}
+.pg[hidden]{display:none}
+@keyframes in{from{opacity:0}to{opacity:1}}
+p{margin:0 0 1.1em}
+.verse{margin:1.4em auto;padding-left:16px;border-left:3px solid var(--rose);color:var(--rose);font-family:"Charm",cursive;font-size:1.45rem;line-height:1.55;max-width:34ch}
+.sign{text-align:right;font-family:"Charm",cursive;font-size:1.7rem;color:var(--rose);margin-top:1.2em}
+.hint{color:var(--chalk-dim);font-size:.92rem;text-align:center;margin:8px 0 18px}
+.promises{list-style:none;padding:0;margin:0}
+.promises li{margin:0 0 6px}
+.promises label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;padding:6px 4px}
+.promises input{appearance:none;flex:none;width:24px;height:24px;margin:6px 0 0;border:2px solid var(--chalk);border-radius:4px;display:grid;place-content:center;cursor:pointer}
+.promises input::after{content:"";width:12px;height:7px;border-left:3px solid var(--rose);border-bottom:3px solid var(--rose);transform:rotate(-45deg) scale(0);transition:transform .15s;margin-top:-3px}
+.promises input:checked::after{transform:rotate(-45deg) scale(1)}
+.promises input:checked+span{text-decoration:line-through;text-decoration-color:var(--rose);color:var(--chalk-dim)}
+.wishes{text-align:center}
+.wishes p{margin-bottom:.9em}
+.big{font-family:"Charm",cursive;font-size:1.8rem;color:var(--rose);line-height:1.4}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:30px}
+.btn{font:600 1rem "Mali",sans-serif;color:#2a1a1e;background:var(--rose);border:0;border-radius:999px;padding:12px 24px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--chalk);border:2px solid var(--line)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,.promises input:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+.btn[hidden]{display:none}
+.dots{display:flex;gap:8px}
+.dots i{width:10px;height:10px;border-radius:50%;border:2px solid var(--chalk-dim)}
+.dots i.on{background:var(--rose);border-color:var(--rose)}
+.center{text-align:center}
+.thanks{max-height:0;overflow:hidden;opacity:0;transition:max-height .6s ease,opacity .6s ease}
+.thanks.show{max-height:300px;opacity:1}
+.music{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:5;padding:9px 16px;font-size:.9rem;box-shadow:0 2px 10px rgba(0,0,0,.4)}
+@media (max-width:480px){body{font-size:17px}.board{padding:34px 18px 28px;border-width:8px}.frame{padding:8px}}
+@media (prefers-reduced-motion:reduce){.heart path{animation:none;stroke-dashoffset:0}.pg{animation:none}.thanks{transition:none}}
+</style>
+</head>
+<body>
+<main class="frame"><div class="board">
+
+<section class="pg" id="p1">
+  <svg class="heart" viewBox="0 0 100 90" aria-hidden="true"><path d="M50 85 C10 55 5 30 25 15 C38 5 50 15 50 25 C50 15 62 5 75 15 C95 30 90 55 50 85 Z"/></svg>
+  <h1>Thư con gửi mẹ</h1>
+  <p class="sub">Nhân ngày 20/11</p>
+  <hr class="rule">
+  <p>Mẹ ơi,</p>
+  <p>Con viết những dòng này khi trong lòng vừa nhẹ, vừa nặng. Nhẹ vì cuối cùng con cũng đủ can đảm nói với mẹ. Nặng vì con nhớ những lúc mình đã làm mẹ buồn.</p>
+  <p>Con nhớ có những lần mẹ lặng im. Có những lần mắt mẹ đỏ hoe mà mẹ vẫn cố cười để con đừng thấy. Lúc ấy con chưa hiểu. Bây giờ con hiểu rồi, và con thương mẹ nhiều lắm.</p>
+  <div class="verse">Mẹ cho con cả bầu trời,<br>con cho mẹ những lần rơi nước mắt.<br>Hôm nay con xin nói thật:<br>con thương mẹ, nhiều hơn con từng nói ra.</div>
+  <p>Con không viết thư này để mẹ phải trả lời. Con chỉ muốn mẹ biết rằng con đã nhận ra lỗi của mình, và con xin lỗi mẹ, thật lòng.</p>
+  <p>Mẹ là người thầy đầu tiên của con. Mẹ dạy con đi, dạy con nói, dạy con cách làm người. Có những bài con học chưa thuộc, nhưng mẹ chưa bao giờ bỏ cuộc với con. Cảm ơn mẹ vì những bữa cơm, những đêm mẹ thức, và những lần mẹ giận mà vẫn lo con có đói không, có lạnh không.</p>
+  <p>Con biết một lời xin lỗi không xóa được nỗi buồn của mẹ. Nhưng con mong nó là bước đầu tiên để con làm mẹ cười nhiều hơn.</p>
+  <p>Con thương mẹ.</p>
+  <p class="sign">Con của mẹ</p>
+</section>
+
+<section class="pg" id="p2" hidden>
+  <h2>Những điều con hứa với mẹ</h2>
+  <p class="hint">Mẹ chạm vào từng lời hứa để con nhớ nhé.</p>
+  <ul class="promises">
+    <li><label><input type="checkbox"><span>Nói chuyện với mẹ nhẹ nhàng hơn, kể cả khi con đang bực.</span></label></li>
+    <li><label><input type="checkbox"><span>Mỗi ngày hỏi mẹ một câu: “Hôm nay mẹ có mệt không?”</span></label></li>
+    <li><label><input type="checkbox"><span>Phụ mẹ một việc nhà mỗi ngày, không cần mẹ nhắc.</span></label></li>
+    <li><label><input type="checkbox"><span>Nghe mẹ nói hết câu rồi con mới trả lời.</span></label></li>
+    <li><label><input type="checkbox"><span>Nhắn cho mẹ khi con về trễ hoặc đi xa, để mẹ đỡ lo.</span></label></li>
+    <li><label><input type="checkbox"><span>Ôm mẹ nhiều hơn, và nói “con thương mẹ” nhiều hơn.</span></label></li>
+  </ul>
+  <div class="verse">Con chưa là người con hoàn hảo,<br>nhưng mỗi ngày con sẽ cố hơn một chút,<br>để mẹ thấy con lớn lên bằng cách thương mẹ.</div>
+</section>
+
+<section class="pg wishes" id="p3" hidden>
+  <h2>Mẹ đừng buồn nữa nhé</h2>
+  <hr class="rule">
+  <p>Con mong những giọt nước mắt mẹ từng vì con sẽ dần được thay bằng những nụ cười.</p>
+  <p>Con mong mẹ nhớ rằng mẹ không hề đơn độc, vì lúc nào cũng có con ở bên.</p>
+  <p>Con mong mẹ được ngủ ngon, ăn ngon, và không phải lo nghĩ nhiều về con nữa.</p>
+  <p>Nhân ngày 20/11, con chúc mẹ luôn khỏe mạnh, bình an và thật vui.</p>
+  <p class="big">Mẹ là điều tuyệt vời nhất con có.</p>
+  <button class="btn" id="fg" type="button" aria-expanded="false" aria-controls="th">Mẹ tha lỗi cho con nhé</button>
+  <div class="thanks" id="th" aria-live="polite"><p class="big" style="margin-top:20px">Cảm ơn mẹ đã luôn cho con thêm một cơ hội. Con yêu mẹ.</p></div>
+</section>
+
+<div class="nav">
+  <button class="btn ghost" id="prev" type="button" hidden>Trang trước</button>
+  <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+  <button class="btn" id="next" type="button">Lật trang</button>
+</div>
+
+</div></main>
+<button class="btn music" id="mu" type="button" aria-pressed="false">♪ Bật nhạc</button>
+<script>
+var cur=0,pg=[].slice.call(document.querySelectorAll('.pg')),dots=[].slice.call(document.querySelectorAll('.dots i')),
+prev=document.getElementById('prev'),next=document.getElementById('next');
+function go(n){cur=n;pg.forEach(function(p,i){p.hidden=i!==n});dots.forEach(function(d,i){d.className=i===n?'on':''});
+prev.hidden=n===0;next.hidden=n===pg.length-1;window.scrollTo({top:0});}
+next.onclick=function(){if(cur<pg.length-1)go(cur+1)};
+prev.onclick=function(){if(cur>0)go(cur-1)};
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'&&cur<pg.length-1)go(cur+1);if(e.key==='ArrowLeft'&&cur>0)go(cur-1)});
+var ac,master,timer,nt,step=0,on=false,mu=document.getElementById('mu');
+var ch=[[261.63,329.63,392],[220,261.63,329.63],[174.61,220,261.63],[196,246.94,293.66]],
+ar=[0,1,2,1,0,1,2,1],
+me=[[659.25,0,0,587.33,0,523.25,0,0],[0,0,523.25,0,587.33,0,659.25,0],[698.46,0,0,659.25,0,587.33,0,0],[587.33,0,0,0,493.88,0,523.25,0]];
+function tone(f,t,d,v){var o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(v,t+0.015);g.gain.exponentialRampToValueAtTime(0.0001,t+d);o.connect(g);g.connect(master);o.start(t);o.stop(t+d+0.05)}
+function sched(){while(nt<ac.currentTime+0.4){var c=Math.floor(step/8)%4,k=step%8;
+if(k===0)tone(ch[c][0]/2,nt,2.6,0.16);
+tone(ch[c][ar[k]],nt,1.3,0.07);
+if(me[c][k])tone(me[c][k],nt,1.9,0.13);
+step++;nt+=0.55}}
+mu.onclick=function(){
+if(!ac){var A=window.AudioContext||window.webkitAudioContext;if(!A)return;ac=new A();master=ac.createGain();master.gain.value=0.6;master.connect(ac.destination)}
+if(!on){ac.resume();nt=ac.currentTime+0.1;sched();timer=setInterval(sched,150);on=true;mu.textContent='Tắt nhạc'}
+else{clearInterval(timer);ac.suspend();on=false;mu.textContent='♪ Bật nhạc'}
+mu.setAttribute('aria-pressed',on)};
+var fg=document.getElementById('fg'),th=document.getElementById('th');
+fg.onclick=function(){th.classList.add('show');fg.setAttribute('aria-expanded','true')};
+</script>
+</body>
+</html>
