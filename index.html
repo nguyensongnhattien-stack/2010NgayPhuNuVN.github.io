@@ -55,6 +55,9 @@ p{margin:0 0 1.1em}
 .thanks{max-height:0;overflow:hidden;opacity:0;transition:max-height .6s ease,opacity .6s ease}
 .thanks.show{max-height:300px;opacity:1}
 .music{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:5;padding:9px 16px;font-size:.9rem}
+.bye{position:fixed;inset:0;z-index:10;display:grid;place-items:center;padding:24px;background:linear-gradient(160deg,var(--bg),var(--bg2));opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}
+.bye.show{opacity:1;visibility:visible}
+.byebox{text-align:center;max-width:420px}
 .petal{position:fixed;top:-30px;width:14px;height:18px;background:var(--rose-soft);border-radius:80% 0 80% 0;opacity:.7;z-index:0;pointer-events:none;animation:fall linear infinite}
 @keyframes fall{to{transform:translate(40px,110vh) rotate(360deg)}}
 @media (max-width:480px){body{font-size:17px}.card{padding:32px 18px 24px;border-radius:22px}.frame{padding:12px 8px 20px}.photos{gap:8px}.polaroid{padding:5px 5px 14px}}
@@ -130,6 +133,7 @@ p{margin:0 0 1.1em}
   <p>Chúc mẹ được yêu thương, được nghỉ ngơi và được làm những điều mẹ thích, không chỉ lo cho cả nhà.</p>
   <p>Chúc nụ cười luôn nở trên môi mẹ, và những điều tốt đẹp nhất luôn đến với mẹ.</p>
   <p class="big">Chúc mẹ 20/10 thật hạnh phúc.<br>Con yêu mẹ nhiều lắm.</p>
+  <div style="margin-top:22px"><button class="btn" id="exit" type="button">Thoát</button></div>
 </section>
 
 <div class="nav">
@@ -140,6 +144,7 @@ p{margin:0 0 1.1em}
 
 </div></main>
 
+<div class="bye" id="bye" role="dialog" aria-modal="true" aria-label="Lời cảm ơn"><div class="byebox"><svg class="flower" aria-hidden="true"><use href="#fl"/></svg><h2>Cảm ơn mẹ</h2><hr class="rule"><p>Cảm ơn mẹ đã đọc thư của con, và đã luôn thương con.</p><p class="big">Con yêu mẹ.<br>Chúc mẹ 20/10 thật vui.</p><button class="btn ghost" id="again" type="button">Đọc lại từ đầu</button></div></div>
 <script>
 var cur=0,pg=[].slice.call(document.querySelectorAll('.pg')),dots=[].slice.call(document.querySelectorAll('.dots i')),
 prev=document.getElementById('prev'),next=document.getElementById('next');
@@ -164,6 +169,9 @@ if(!ac){var A=window.AudioContext||window.webkitAudioContext;if(!A)return;ac=new
 ac.resume();nt=ac.currentTime+0.1;sched();timer=setInterval(sched,150);on=true;evs.forEach(function(e){document.removeEventListener(e,startMusic)})
 }
 evs.forEach(function(e){document.addEventListener(e,startMusic)});
+var stopped=false,bye=document.getElementById('bye');
+document.getElementById('exit').onclick=function(){bye.classList.add('show');if(on&&!stopped){stopped=true;master.gain.setTargetAtTime(0.0001,ac.currentTime,1);setTimeout(function(){if(stopped){clearInterval(timer);ac.suspend()}},4000)}};
+document.getElementById('again').onclick=function(){bye.classList.remove('show');go(0);if(stopped){stopped=false;clearInterval(timer);ac.resume();master.gain.cancelScheduledValues(ac.currentTime);master.gain.setValueAtTime(0.6,ac.currentTime);nt=ac.currentTime+0.1;sched();timer=setInterval(sched,150)}};
 var fg=document.getElementById('fg'),th=document.getElementById('th');
 fg.onclick=function(){th.classList.add('show');fg.setAttribute('aria-expanded','true');setTimeout(function(){go(3)},2200)};
 </script>
