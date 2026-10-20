@@ -39,6 +39,7 @@ p{margin:0 0 1.1em}
 .slot{aspect-ratio:4/5;border:2px dashed var(--rose-soft);border-radius:3px;display:grid;place-content:center;text-align:center;color:#a77a89;font-size:.85rem;line-height:1.4;padding:6px;background:#fff7f8}
 .slot img{width:100%;height:100%;object-fit:cover;display:block}
 .wishes{text-align:center}
+.hero-photo{max-width:320px;margin:0 auto;--r:-2deg}
 .wishes p{margin-bottom:.9em}
 .big{font-family:"Charm",cursive;font-size:1.8rem;color:var(--rose);line-height:1.4}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:30px}
@@ -87,13 +88,13 @@ p{margin:0 0 1.1em}
   <hr class="rule">
   <ul class="promises">
     <li>Nói chuyện với mẹ nhẹ nhàng hơn, kể cả khi con đang bực.</li>
-    <li>Mỗi ngày hỏi mẹ một câu: “Hôm nay mẹ có mệt không?”</li>
-    <li>Phụ mẹ một việc nhà mỗi ngày, không cần mẹ nhắc.</li>
+    
+    <li>Phụ mẹ một việc nhà mỗi ngày, để mẹ không còn nhắc.</li>
     <li>Nghe mẹ nói hết câu rồi con mới trả lời.</li>
     <li>Nhắn cho mẹ khi con về trễ hoặc đi xa, để mẹ đỡ lo.</li>
     <li>Ôm mẹ nhiều hơn, và nói “con thương mẹ” nhiều hơn.</li>
   </ul>
-  <div class="verse">Con chưa là người con hoàn hảo,<br>nhưng mỗi ngày con sẽ cố hơn một chút,<br>để mẹ thấy con lớn lên bằng cách thương mẹ.</div>
+  <div class="verse">Con chưa là người con hoàn hảo,<br>nhưng con vẫn đang sửa đổi dù chủa quá nhiều</div>
   <hr class="rule">
   <h3>Những khoảnh khắc của mẹ và con</h3>
   <div class="photos">
@@ -116,9 +117,23 @@ p{margin:0 0 1.1em}
   <div class="thanks" id="th" aria-live="polite"><p class="big" style="margin-top:20px">Cảm ơn mẹ đã luôn cho con thêm một cơ hội. Con yêu mẹ.</p></div>
 </section>
 
+<section class="pg wishes" id="p4" hidden>
+  <svg class="flower" style="width:56px;height:56px" aria-hidden="true"><use href="#fl"/></svg>
+  <h2>Chúc mừng ngày 20/10, mẹ yêu</h2>
+  <hr class="rule">
+  <!-- CHỖ ĐỂ ẢNH RIÊNG: thay chữ trong khung bằng <img src="..." alt=""> -->
+  <div class="polaroid hero-photo"><div class="slot" data-slot="4">Chỗ để ảnh riêng</div></div>
+  <hr class="rule">
+  <p>Chúc mẹ luôn khỏe mạnh, để mẹ có thật nhiều năm bên con.</p>
+  <p>Chúc mẹ mỗi sáng thức dậy thấy lòng nhẹ nhàng, mỗi tối đi ngủ thấy bình yên.</p>
+  <p>Chúc mẹ được yêu thương, được nghỉ ngơi và được làm những điều mẹ thích, không chỉ lo cho cả nhà.</p>
+  <p>Chúc nụ cười luôn nở trên môi mẹ, và những điều tốt đẹp nhất luôn đến với mẹ.</p>
+  <p class="big">Chúc mẹ 20/10 thật hạnh phúc.<br>Con yêu mẹ nhiều lắm.</p>
+</section>
+
 <div class="nav">
   <button class="btn ghost" id="prev" type="button" hidden>Trang trước</button>
-  <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+  <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
   <button class="btn" id="next" type="button">Lật trang</button>
 </div>
 
@@ -128,10 +143,10 @@ p{margin:0 0 1.1em}
 var cur=0,pg=[].slice.call(document.querySelectorAll('.pg')),dots=[].slice.call(document.querySelectorAll('.dots i')),
 prev=document.getElementById('prev'),next=document.getElementById('next');
 function go(n){cur=n;pg.forEach(function(p,i){p.hidden=i!==n});dots.forEach(function(d,i){d.className=i===n?'on':''});
-prev.hidden=n===0;next.hidden=n===pg.length-1;window.scrollTo({top:0});}
-next.onclick=function(){if(cur<pg.length-1)go(cur+1)};
+prev.hidden=n===0;next.hidden=n>=2;window.scrollTo({top:0});}
+next.onclick=function(){if(cur<2)go(cur+1)};
 prev.onclick=function(){if(cur>0)go(cur-1)};
-document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'&&cur<pg.length-1)go(cur+1);if(e.key==='ArrowLeft'&&cur>0)go(cur-1)});
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'&&cur<2)go(cur+1);if(e.key==='ArrowLeft'&&cur>0)go(cur-1)});
 var ac,master,timer,nt,step=0,on=false;
 var ch=[[261.63,329.63,392],[220,261.63,329.63],[174.61,220,261.63],[196,246.94,293.66]],
 ar=[0,1,2,1,0,1,2,1],
@@ -149,7 +164,7 @@ ac.resume();nt=ac.currentTime+0.1;sched();timer=setInterval(sched,150);on=true;e
 }
 evs.forEach(function(e){document.addEventListener(e,startMusic)});
 var fg=document.getElementById('fg'),th=document.getElementById('th');
-fg.onclick=function(){th.classList.add('show');fg.setAttribute('aria-expanded','true')};
+fg.onclick=function(){th.classList.add('show');fg.setAttribute('aria-expanded','true');setTimeout(function(){go(3)},2200)};
 </script>
 </body>
 </html>
